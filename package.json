@@ -1,0 +1,25 @@
+{
+  "name": "torusq",
+  "version": "0.0.3",
+  "main": "src/cli.cjs",
+  "bin": {
+    "torusq": "src/cli.cjs"
+  },
+  "author": "Ming-der Wang",
+  "license": "MIT",
+  "scripts": {
+    "build": "microbundle --define PKG_VERSION=$npm_package_version",
+    "watch": "microbundle watch --define PKG_VERSION=$npm_package_version",
+    "np": "npm publish --access public",
+    "build:publish": "rm -r dist && yarn build && yarn np"
+  },
+  "dependencies": {
+    "@toruslabs/fetch-node-details": "^11.0.1"
+  },
+  "peerDependencies": {
+    "@babel/runtime": "^7.0.0"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.1"
+  }
+}
